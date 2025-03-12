@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <roll>301</roll>
+        <name>krishna</name>
+        <dob>2002-12-05</dob>
+        <class>3rd Year</class>
+        <department>Computer Science</department>
+        <email>janesmith@example.com</email>
+    </student>
+    <student>
+        <roll>302</roll>
+        <name>David Johnson</name>
+        <dob>2003-03-10</dob>
+        <class>3rd Year</class>
+        <department>Electronics</department>
+        <email>davidjohnson@example.com</email>
+    </student>
+    <student>
+        <roll>303</roll>
+        <name>Emily Davis</name>
+        <dob>2002-07-25</dob>
+        <class>3rd Year</class>
+        <department>Information Technology</department>
+        <email>emilydavis@example.com</email>
+    </student>
+    <student>
+        <roll>304</roll>
+        <name>Michael Brown</name>
+        <dob>2003-09-10</dob>
+        <class>3rd Year</class>
+        <department>Civil Engineering</department>
+        <email>michaelbrown@example.com</email>
+    </student>
+    <student>
+        <roll>305</roll>
+        <name>Sarah Lee</name>
+        <dob>2003-11-17</dob>
+        <class>3rd Year</class>
+        <department>Computer Science</department>
+        <email>sarahlee@example.com</email>
+    </student>
+    <student>
+        <roll>306</roll>
+        <name>Chris Taylor</name>
+        <dob>2002-02-20</dob>
+        <class>3rd Year</class>
+        <department>Electronics</department>
+        <email>christaylor@example.com</email>
+    </student>
+    <student>
+        <roll>307</roll>
+        <name>Alice Williams</name>
+        <dob>2003-04-22</dob>
+        <class>3rd Year</class>
+        <department>Mechanical Engineering</department>
+        <email>alicewilliams@example.com</email>
+    </student>
+    <student>
+        <roll>308</roll>
+        <name>Robert Clark</name>
+        <dob>2002-11-30</dob>
+        <class>3rd Year</class>
+        <department>Information Technology</department>
+        <email>robertclark@example.com</email>
+    </student>
+    <student>
+        <roll>309</roll>
+        <name>Olivia Martinez</name>
+        <dob>2003-05-09</dob>
+        <class>3rd Year</class>
+        <department>Civil Engineering</department>
+        <email>oliviamartinez@example.com</email>
+    </student>
+    <student>
+        <roll>201</roll>
+        <name>vamshi</name>
+        <dob>15/2/2004</dob>
+        <class>3rd Year</class>
+        <department>computer Science</department>
+        <email>vamshikathi92@gmail.com</email>
+    </student>
+    <student>
+        <roll>202</roll>
+        <name>krishna</name>
+        <dob>2002-12-05</dob>
+        <class>3rd Year</class>
+        <department>Computer Science</department>
+        <email>janesmith@example.com</email>
+    </student>
+    <student>
+        <roll>203</roll>
+        <name>David Johnson</name>
+        <dob>2003-03-10</dob>
+        <class>3rd Year</class>
+        <department>Electronics</department>
+        <email>davidjohnson@example.com</email>
+    </student>
+    <student>
+        <roll>204</roll>
+        <name>Emily Davis</name>
+        <dob>2002-07-25</dob>
+        <class>3rd Year</class>
+        <department>Information Technology</department>
+        <email>emilydavis@example.com</email>
+    </student>
+    <student>
+        <roll>205</roll>
+        <name>Michael Brown</name>
+        <dob>2003-09-10</dob>
+        <class>3rd Year</class>
+        <department>Civil Engineering</department>
+        <email>michaelbrown@example.com</email>
+    </student>
+    <student>
+        <roll>206</roll>
+        <name>Sarah Lee</name>
+        <dob>2003-11-17</dob>
+        <class>3rd Year</class>
+        <department>Computer Science</department>
+        <email>sarahlee@example.com</email>
+    </student>
+    <student>
+        <roll>207</roll>
+        <name>Chris Taylor</name>
+        <dob>2002-02-20</dob>
+        <class>3rd Year</class>
+        <department>Electronics</department>
+        <email>christaylor@example.com</email>
+    </student>
+    <student>
+        <roll>208</roll>
+        <name>Alice Williams</name>
+        <dob>2003-04-22</dob>
+        <class>3rd Year</class>
+        <department>Mechanical Engineering</department>
+        <email>alicewilliams@example.com</email>
+    </student>
+    <student>
+        <roll>209</roll>
+        <name>Robert Clark</name>
+        <dob>2002-11-30</dob>
+        <class>3rd Year</class>
+        <department>Information Technology</department>
+        <email>robertclark@example.com</email>
+    </student>
+    <student>
+        <roll>210</roll>
+        <name>Olivia Martinez</name>
+        <dob>2003-05-09</dob>
+        <class>3rd Year</class>
+        <department>Civil Engineering</department>
+        <email>oliviamartinez@example.com</email>
+    </student>
+</students>

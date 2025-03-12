@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Lookup</title>
+    <style>
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #b0b51e, #00cc99);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: #c65f28;
+        }
+
+        /* Main Container */
+        .container {
+            background: rgba(75, 102, 32, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #a93737;
+            font-weight: 600;
+        }
+
+        /* Input Field */
+        input {
+            width: 80%;
+            padding: 14px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #a42aa2;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #b92f66;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: #00cc99;
+        }
+
+        /* Button Styling */
+        button {
+            background: #00cc99;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 80%;
+        }
+
+        button:hover {
+            background: #0066cc;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 204, 153, 0.5);
+        }
+
+        /* Result Box */
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 6px 15px rgba(0, 204, 153, 0.3);
+            display: none;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            color: #c31515;
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: 400;
+            color: #131111;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            input, button {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        function fetchStudentDetails() {
+            let rollNumber = document.getElementById("rollInput").value.trim();
+            if (rollNumber === "") {
+                alert("Please enter a roll number!");
+                return;
+            }
+
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4) {
+                    if (this.status === 200) {
+                        // Check if response is valid XML
+                        if (this.responseXML) {
+                            console.log("XML loaded successfully.");
+                            let xmlDoc = this.responseXML;
+                            let students = xmlDoc.getElementsByTagName("student");
+                            let found = false;
+                            let output = "<h3 style='color:#fff;'>Student Details</h3>";
+
+                            for (let i = 0; i < students.length; i++) {
+                                let roll = students[i].getElementsByTagName("roll")[0].childNodes[0].nodeValue;
+                                if (roll === rollNumber) {
+                                    let name = students[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                                    let dob = students[i].getElementsByTagName("dob")[0].childNodes[0].nodeValue;
+                                    let className = students[i].getElementsByTagName("class")[0].childNodes[0].nodeValue;
+                                    let department = students[i].getElementsByTagName("department")[0].childNodes[0].nodeValue;
+                                    let email = students[i].getElementsByTagName("email")[0].childNodes[0].nodeValue;
+
+                                    output += `<p>Roll Number: <span>${roll}</span></p>`;
+                                    output += `<p>Name: <span>${name}</span></p>`;
+                                    output += `<p>Date of Birth: <span>${dob}</span></p>`;
+                                    output += `<p>Class: <span>${className}</span></p>`;
+                                    output += `<p>Department: <span>${department}</span></p>`;
+                                    output += `<p>Email: <span>${email}</span></p>`;
+                                    found = true;
+                                    break;
+                                }
+                            }
+
+                            if (!found) {
+                                output = "<p style='color:red;'>Student not found!</p>";
+                            }
+
+                            document.getElementById("result").innerHTML = output;
+                            document.getElementById("result").style.display = "block";
+                        } else {
+                            console.error("Error: Response is not valid XML.");
+                            alert("There was an error loading the data.");
+                        }
+                    } else {
+                        console.error("Error loading XML: " + this.statusText);
+                        alert("There was an error loading the student data.");
+                    }
+                }
+            };
+
+            // Load the XML file
+            xhttp.open("GET", "students.xml", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Information</h2>
+        <input type="text" id="rollInput" placeholder="Enter Roll Number">
+        <button onclick= "fetchStudentDetails()" >Search</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
